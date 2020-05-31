@@ -48,4 +48,9 @@ final class Course extends AggregateRoot
     {
         $this->name = $newName;
     }
+
+    public function like(): void
+    {
+        // $this->like!
+    }
 }

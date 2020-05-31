@@ -1,0 +1,4 @@
+course_like:
+  path: /course/{id}/like
+  controller: CodelyTv\Apps\Backoffice\Backend\Controller\Courses\CourseLikePostController
+  methods:  [POST]
