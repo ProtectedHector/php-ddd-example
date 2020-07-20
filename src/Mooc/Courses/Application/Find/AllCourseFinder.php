@@ -6,7 +6,7 @@ namespace CodelyTv\Mooc\Courses\Application\Find;
 
 use CodelyTv\Mooc\Courses\Domain\CourseRepository;
 use CodelyTv\Mooc\Courses\Domain\NoCoursesFound;
-use CodelyTv\Mooc\CoursesCounter\Application\Find\CourseResponse;
+use CodelyTv\Mooc\CoursesCounter\Application\Find\CoursesResponse;
 
 final class AllCourseFinder
 {
@@ -17,13 +17,13 @@ final class AllCourseFinder
         $this->repository = $repository;
     }
 
-    public function __invoke(): CourseResponse
+    public function __invoke(): CoursesResponse
     {
         $courses = $this->repository->findAll();
 
         $this->ensureThereAreCourses($courses);
 
-        return new CourseResponse($courses);
+        return new CoursesResponse($courses);
     }
 
     private function ensureThereAreCourses(?array $courses): void
